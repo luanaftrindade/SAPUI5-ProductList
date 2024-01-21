@@ -1,0 +1,4 @@
+specVersion: "3.2"
+metadata:
+  name: sapui5-productlist
+type: application
