@@ -1,10 +1,15 @@
-sap.ui.define(["sap/ui/core/mvc/XMLView"], function (XMLView) {
-  "use strict";
-  alert("UI5 is ready.");
+sap.ui.define(
+  ["sap/ui/core/ComponentContainer"],
+  function (ComponentContainer) {
+    "use strict";
+    alert("UI5 is ready.");
 
-  XMLView.create({
-    viewName: "sap.ui.demo.walkthrough.views.ProductList",
-  }).then(function (view) {
-    view.placeAt("content");
-  });
-});
+    new ComponentContainer({
+      name: "sap.ui.demo.walkthrough",
+      settings: {
+        id: "walkthrough",
+      },
+      async: true,
+    }).placeAt("content");
+  }
+);
