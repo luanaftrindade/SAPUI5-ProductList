@@ -3,4 +3,10 @@ controllerName="sap.ui.demo/walkthrough.controllers.ProductList"
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc">
 <Button text="Details" press=".onShowProductDetails"/>
+<Input 
+value="{/recipient/name}"
+description="Message from {/recipient/name}"
+valueLiveUpdate="true"
+width="60%"
+></Input>
 </mvc:View>
