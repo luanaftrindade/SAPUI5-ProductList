@@ -1,5 +1,6 @@
 <mvc:View
+controllerName="sap.ui.demo/walkthrough.controllers.ProductList"
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc">
-<Text text="Text inside XML"/>
+<Button text="Details" press=".onShowProductDetails"/>
 </mvc:View>
