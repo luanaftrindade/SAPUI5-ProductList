@@ -6,6 +6,13 @@
         id="productDetailsDialog"
         title="See Price and Discounts"
     >
+        <content>
+            <core:Icon
+                src="sap-icon://hello-world"
+                size="8rem"
+                class="sapUiMediumMargin"
+            />
+        </content>
         <beginButton>
             <Button
                 text="{i18n>dialogCloseDetailsText}"

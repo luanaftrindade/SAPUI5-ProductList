@@ -17,28 +17,7 @@ sap.ui.define(
           MessageToast.show(message);
         },
         onShowMoreDetails: function () {
-          var view = this.getView();
-
-          // create the dialog lazily
-
-          if (!this.byId("productDetailsDialog")) {
-            // load asynchronous XML fragment
-            Fragment.load({
-              id: view.getId(),
-              name: "sap.ui.demo.walkthrough.views.ProductDetails",
-              controller: this,
-            }).then(function (dialog) {
-              // connect dialog to the root view of this component (including models and lifecycle)
-              view.addDependent(dialog);
-              // and then open it
-              dialog.open();
-            });
-          } else {
-            this.byId("productDetailsDialog").open();
-          }
-        },
-        onCloseDialog: function () {
-          this.byId("productDetailsDialog").close();
+            this.getOwnerComponent().openDetailsDialog();
         },
       }
     );

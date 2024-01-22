@@ -3,8 +3,9 @@ sap.ui.define(
     "sap/ui/core/UIComponent",
     "sap/ui/model/json/JSONModel",
     "sap/ui/model/resource/ResourceModel",
+    "./controllers/DetailsDialog",
   ],
-  function (UIComponent, JSONModel, ResourceModel) {
+  function (UIComponent, JSONModel, ResourceModel, DetailsDialog) {
     "use strict";
     return UIComponent.extend("sap.ui.demo.walkthrough.Component", {
       metadata: {
@@ -21,6 +22,18 @@ sap.ui.define(
         };
         var model = new JSONModel(data);
         this.setModel(model);
+
+        // set dialog - _ is a convention for private methods
+        this._detailsDialog = new DetailsDialog(this.getRootControl());
+      },
+
+      exit: function () {
+        this._detailsDialog.destroy();
+        delete this._detailsDialog;
+      },
+
+      openDetailsDialog: function () {
+        this._detailsDialog.open();
       },
     });
   }

@@ -11,6 +11,7 @@
         <content>
             <Button
                 id="showMoreDetailsButton"
+                icon="sap-icon://loan"
                 text="{i18n>openMoreDetailsText}"
                 press=".onShowMoreDetails"
                 class="sapUiSmallMarginEnd"

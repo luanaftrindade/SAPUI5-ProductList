@@ -4,7 +4,11 @@ sap.ui.define(
     "use strict";
     return Controller.extend(
       "sap.ui.demo.walkthrough.controllers.ProductList",
-      {}
+      {
+        onOpenDetailsDialog: function () {
+          this.getOwnerComponent().openDetailsDialog();
+        },
+      }
     );
   }
 );

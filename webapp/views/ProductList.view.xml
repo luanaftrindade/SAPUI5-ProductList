@@ -8,6 +8,12 @@
         <App class="productListMainApp">
             <pages>
                 <Page title="{i18n>ProductListTitle}">
+                    <headerContent>
+                        <Button
+                            icon="sap-icon://loan"
+                            press=".onOpenDetailsDialog"
+                        />
+                    </headerContent>
                     <content>
                         <Panel
                             headerText="{i18n>firstPanelTitle}"
