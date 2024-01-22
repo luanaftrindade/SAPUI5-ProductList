@@ -4,26 +4,37 @@
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true"
 >
-    <App>
-        <pages>
-            <Page title="{i18n>ProductListTitle}">
-                <content>
-                    <Panel headerText="{i18n>firstPanelTitle}">
-                        <content>
-                            <Button
-                                text="{i18n>showDetailsButton}"
-                                press=".onShowProductDetails"
-                            />
-                            <Input
-                                value="{/recipient/name}"
-                                description="Message from {/recipient/name}"
-                                valueLiveUpdate="true"
-                                width="60%"
-                            />
-                        </content>
-                    </Panel>
-                </content>
-            </Page>
-        </pages>
-    </App>
+    <Shell>
+        <App>
+            <pages>
+                <Page title="{i18n>ProductListTitle}">
+                    <content>
+                        <Panel
+                            headerText="{i18n>firstPanelTitle}"
+                            class="sapUiResponsiveMargin"
+                            width="auto"
+                        >
+                            <content>
+                                <Button
+                                    text="{i18n>showDetailsButton}"
+                                    press=".onShowProductDetails"
+                                    class="sapUiSmallMarginEnd"
+                                />
+                                <Input
+                                    value="{/recipient/name}"
+                                    description="Message from {/recipient/name}"
+                                    valueLiveUpdate="true"
+                                    width="60%"
+                                />
+                                <Text
+                                    text="Be welcome, {/recipient/name}"
+                                    class="sapUiSmallMargin"
+                                />
+                            </content>
+                        </Panel>
+                    </content>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
 </mvc:View>
