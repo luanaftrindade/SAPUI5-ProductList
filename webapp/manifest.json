@@ -20,7 +20,7 @@
         },
         "dataSources": {
             "invoiceRemote": {
-                "uri": "https://services.odata.org/Northwind/Northwind.svc/",
+                "uri": "<uri>",
                 "type": "OData",
                 "settings": {
                     "odataVersion": "2.0"
@@ -79,13 +79,6 @@
                     "fallbackLocale": ""
                 },
                 "uri": "<uriRelativeToManifest>"
-            },
-            "invoice": {
-                "dataSource": "invoiceRemote"
-            },
-            "": {
-                "dataSource": "<dataSourceAlias>",
-                "settings": {}
             }
         },
         "rootView": {

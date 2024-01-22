@@ -1,12 +1,29 @@
 <mvc:View
-controllerName="sap.ui.demo/walkthrough.controllers.ProductList"
+    controllerName="sap.ui.demo/walkthrough.controllers.ProductList"
     xmlns="sap.m"
-    xmlns:mvc="sap.ui.core.mvc">
-<Button text="{i18n>showDetailsButton}" press=".onShowProductDetails"/>
-<Input 
-value="{/recipient/name}"
-description="Message from {/recipient/name}"
-valueLiveUpdate="true"
-width="60%"
-></Input>
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+>
+    <App>
+        <pages>
+            <Page title="{i18n>ProductListTitle}">
+                <content>
+                    <Panel headerText="{i18n>firstPanelTitle}">
+                        <content>
+                            <Button
+                                text="{i18n>showDetailsButton}"
+                                press=".onShowProductDetails"
+                            />
+                            <Input
+                                value="{/recipient/name}"
+                                description="Message from {/recipient/name}"
+                                valueLiveUpdate="true"
+                                width="60%"
+                            />
+                        </content>
+                    </Panel>
+                </content>
+            </Page>
+        </pages>
+    </App>
 </mvc:View>
