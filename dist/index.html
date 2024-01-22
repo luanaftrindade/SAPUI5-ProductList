@@ -14,8 +14,9 @@
       data-sap-ui-async="true"
       data-sap-ui-onInit="module:sap/ui/core/ComponentSupport"
       data-sap-ui-resourceroots='{
-		"sap.ui.demo.walkthrough": "./"
-	}'
+    "sap.ui.demo.walkthrough": "./"
+  }'
+      data-sap-ui-preload="async"
     ></script>
   </head>
   <body class="sapUiBody" id="content">
@@ -23,7 +24,7 @@
       data-sap-ui-component
       data-name="sap.ui.demo.walkthrough"
       data-id="container"
-      data-setting='{"id": walkthrough }'
+      data-setting="'{id : walkthrough}'"
     ></div>
   </body>
 </html>

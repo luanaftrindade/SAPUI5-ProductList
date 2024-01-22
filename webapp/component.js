@@ -1,15 +1,14 @@
 sap.ui.define(
-  ["sap/ui/core/UIComponent", "sap/ui/model/json/JSONModel"],
-  function (UIComponent, JSONModel) {
+  [
+    "sap/ui/core/UIComponent",
+    "sap/ui/model/json/JSONModel",
+    "sap/ui/model/resource/ResourceModel",
+  ],
+  function (UIComponent, JSONModel, ResourceModel) {
     "use strict";
-    return UIComponent.extend("sap.ui.walkthrough.Component", {
+    return UIComponent.extend("sap.ui.demo.walkthrough.Component", {
       metadata: {
-        rootView: {
-          viewName: "sap.ui.demo.walkthrough.views.ProductList",
-          type: "XML",
-          async: true,
-          id: "product_list",
-        },
+        manifest: "json",
       },
       init: function () {
         // call the init function of the parent
