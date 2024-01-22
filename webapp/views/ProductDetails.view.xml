@@ -10,6 +10,12 @@
     >
         <content>
             <Button
+                id="showMoreDetailsButton"
+                text="{i18n>openMoreDetailsText}"
+                press=".onShowMoreDetails"
+                class="sapUiSmallMarginEnd"
+            />
+            <Button
                 text="{i18n>showDetailsButton}"
                 press=".onShowProductDetails"
                 class="showDetailsButton"

@@ -1,0 +1,16 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Dialog
+        id="productDetailsDialog"
+        title="See Price and Discounts"
+    >
+        <beginButton>
+            <Button
+                text="{i18n>dialogCloseDetailsText}"
+                press=".onCloseDialog"
+            />
+        </beginButton>
+    </Dialog>
+</core:FragmentDefinition>
