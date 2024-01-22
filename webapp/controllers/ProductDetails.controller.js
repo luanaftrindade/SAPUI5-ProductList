@@ -6,6 +6,7 @@ sap.ui.define(
       "sap.ui.demo.walkthrough.controllers.ProductDetails",
       {
         onShowProductDetails: function () {
+            // here to debug
           console.log("VIEW:", this.getView());
           console.log("MODEL:", this.getView().getModel("i18n"));
 

@@ -24,6 +24,9 @@
                                 <mvc:XMLView
                                     viewName="sap.ui.demo.walkthrough.views.ProductDetails"
                                 />
+                                <mvc:XMLView
+                                    viewName="sap.ui.demo.walkthrough.views.NewProductList"
+                                />
                             </content>
                         </Panel>
                     </content>

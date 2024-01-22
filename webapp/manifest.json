@@ -1,8 +1,6 @@
 {
     "_version": "1.1.0",
-	
-	"start_url": "<startUrl>",
-	
+    "start_url": "<startUrl>",
     "sap.app": {
         "_version": "1.1.0",
         "id": "sap.ui.demo.walkthrough",
@@ -15,7 +13,8 @@
         "description": "{{appDescription}}",
         "tags": {
             "keywords": [
-                "{{<keyword1>}}", "{{<keyword2>}}"
+                "{{<keyword1>}}",
+                "{{<keyword2>}}"
             ]
         },
         "dataSources": {
@@ -68,17 +67,22 @@
             "libs": {
                 "sap.m": {}
             }
-            
         },
         "models": {
             "i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
                 "settings": {
                     "bundleName": "sap.ui.demo.walkthrough.i18n.i18n",
-                    "supportedLocales": [""],
+                    "supportedLocales": [
+                        ""
+                    ],
                     "fallbackLocale": ""
                 },
                 "uri": "<uriRelativeToManifest>"
+            },
+            "invoice": {
+                "type": "sap.ui.model.json.JSONModel",
+                "uri": "./services/productListData.json"
             }
         },
         "rootView": {
@@ -88,9 +92,7 @@
             "id": "product_list"
         },
         "handleValidation": false,
-        "config": {
-          
-        },
+        "config": {},
         "routing": {
             "config": {
                 "routerClass": "sap.m.routing.Router",
@@ -121,21 +123,18 @@
                     "viewId": "detail",
                     "viewName": "Detail"
                 }
-
             }
-          
         },
         "extends": {
-            "component" : "<extendedComponentId>",
-			"minVersion": "<minComp1Version>",
-			"extensions": {}
+            "component": "<extendedComponentId>",
+            "minVersion": "<minComp1Version>",
+            "extensions": {}
         },
         "contentDensities": {
             "compact": false,
             "cozy": false
         }
     },
-
     "sap.platform.abap": {
         "_version": "1.1.0",
         "uri": "<uri>"
