@@ -5,7 +5,7 @@
     displayBlock="true"
 >
     <Shell>
-        <App>
+        <App class="productListMainApp">
             <pages>
                 <Page title="{i18n>ProductListTitle}">
                     <content>
@@ -18,7 +18,7 @@
                                 <Button
                                     text="{i18n>showDetailsButton}"
                                     press=".onShowProductDetails"
-                                    class="sapUiSmallMarginEnd"
+                                    class="showDetailsButton"
                                 />
                                 <Input
                                     value="{/recipient/name}"
@@ -26,12 +26,19 @@
                                     valueLiveUpdate="true"
                                     width="60%"
                                 />
-                                <Text
-                                    text="Be welcome, {/recipient/name}"
-                                    class="sapUiSmallMargin"
+                                <FormattedText
+                                    htmlText="Be welcome, {/recipient/name}"
+                                    class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText"
                                 />
                             </content>
                         </Panel>
+                    </content>
+                </Page>
+                <Page>
+                    <content>
+                        <mvc:XMLView
+                            viewName="sap.ui.demo.walkthrough.views.ProductDetails"
+                        />
                     </content>
                 </Page>
             </pages>

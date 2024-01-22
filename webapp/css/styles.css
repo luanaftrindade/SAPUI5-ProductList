@@ -1,0 +1,12 @@
+html[dir="ltr"] .productListMainApp .showDetailsButton .sapMByn {
+  margin-right: 0.125rem;
+}
+
+html[dir="rtl"] .productListMainApp .showDetailsButton .sapMByn {
+  margin-left: 0.125rem;
+}
+
+.productListMainApp .myCustomText {
+  display: inline-block;
+  font-weight: bold;
+}
