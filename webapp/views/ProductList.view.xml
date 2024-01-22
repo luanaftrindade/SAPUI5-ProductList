@@ -15,30 +15,11 @@
                             width="auto"
                         >
                             <content>
-                                <Button
-                                    text="{i18n>showDetailsButton}"
-                                    press=".onShowProductDetails"
-                                    class="showDetailsButton"
-                                />
-                                <Input
-                                    value="{/recipient/name}"
-                                    description="Message from {/recipient/name}"
-                                    valueLiveUpdate="true"
-                                    width="60%"
-                                />
-                                <FormattedText
-                                    htmlText="Be welcome, {/recipient/name}"
-                                    class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText"
+                                <mvc:XMLView
+                                    viewName="sap.ui.demo.walkthrough.views.ProductDetails"
                                 />
                             </content>
                         </Panel>
-                    </content>
-                </Page>
-                <Page>
-                    <content>
-                        <mvc:XMLView
-                            viewName="sap.ui.demo.walkthrough.views.ProductDetails"
-                        />
                     </content>
                 </Page>
             </pages>
