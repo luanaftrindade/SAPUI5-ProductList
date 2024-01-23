@@ -22,7 +22,7 @@
                         >
                             <content>
                                 <mvc:XMLView
-                                    viewName="sap.ui.demo.walkthrough.views.ProductDetails"
+                                    viewName="sap.ui.demo.walkthrough.views.MainTopSection"
                                 />
                                 <mvc:XMLView
                                     viewName="sap.ui.demo.walkthrough.views.NewProductList"

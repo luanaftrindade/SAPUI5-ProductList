@@ -3,7 +3,7 @@ sap.ui.define(
   function (Controller, MessageToast, Fragment) {
     "use strict";
     return Controller.extend(
-      "sap.ui.demo.walkthrough.controllers.ProductDetails",
+      "sap.ui.demo.walkthrough.controllers.MainTopSection",
       {
         onShowProductDetails: function () {
             // here to debug
