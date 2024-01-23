@@ -1,15 +1,43 @@
 <mvc:View
+    controllerName="sap.ui.demo.walkthrough.controllers.NewProductList"
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
 >
-    <List
+    <Table
         headerText="{i18n>newProductList}"
         class="sapUiResponsiveMargin"
         width="auto"
         items="{invoice>/Products}"
     >
+        <columns>
+            <Column>
+                <Text text="{i18n>productName}" />
+            </Column>
+            <Column>
+                <Text text="{i18n>quantityPerUnit}" />
+            </Column>
+            <Column>
+                <Text text="{i18n>unitsInStock}" />
+            </Column>
+        </columns>
         <items>
-            <ObjectListItem title="{invoice>ProductName}" />
+            <ColumnListItem>
+                <cells>
+                    <VBox>
+                        <Text text="{invoice>ProductName}" />
+                        <Text
+                            text="{invoice>ProductID}"
+                            class="sapUiTinyMarginTop"
+                        />
+                    </VBox>
+                    <Text text="{invoice>QuantityPerUnit}" />
+                    <Text
+                        text="{invoice>UnitsInStock}"
+                        class="sapUiTinyMarginTop"
+                        textAlign="End"
+                    />
+                </cells>
+            </ColumnListItem>
         </items>
-    </List>
+    </Table>
 </mvc:View>
