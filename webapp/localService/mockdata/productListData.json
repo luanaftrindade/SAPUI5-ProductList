@@ -2,7 +2,7 @@
     "Products": [
         {
             "ProductID": 1,
-            "ProductName": "Chai",
+            "ProductName": "Café",
             "SupplierID": 1,
             "CategoryID": 1,
             "QuantityPerUnit": "10 boxes x 20 bags",
