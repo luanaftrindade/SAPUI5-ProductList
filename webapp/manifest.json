@@ -108,7 +108,7 @@
                     "target": "mainpage"
                 },
                 {
-                    "pattern": "details",
+                    "pattern": "details/{invoicePath}",
                     "name": "details",
                     "target": "details"
                 }
