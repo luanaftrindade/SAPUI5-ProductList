@@ -12,7 +12,7 @@ sap.ui.define(
       "sap.ui.demo.walkthrough.controllers.NewProductList",
 
       {
-        // NOT WORKING
+        /* // NOT WORKING
         onFilterProducts: function (event) {
           var oModel = this.getView().getModel("invoice");
 
@@ -28,6 +28,11 @@ sap.ui.define(
           var list = this.byId("productsList");
           var binding = list.getBinding("items");
           binding.filter(aFilters);
+        },
+ */
+        onPress: function (event) {
+          var router = sap.ui.core.UIComponent.getRouterFor(this);
+          router.navTo("details");
         },
       }
     );

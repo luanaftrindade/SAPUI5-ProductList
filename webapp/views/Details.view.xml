@@ -1,0 +1,9 @@
+<mvc:View
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    id="details"
+>
+    <Page title="{i18n>detailsPageTitle}">
+        <ObjectHeader title="Product" />
+    </Page>
+</mvc:View>

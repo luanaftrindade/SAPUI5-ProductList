@@ -25,6 +25,9 @@ sap.ui.define(
 
         // set dialog - _ is a convention for private methods
         this._detailsDialog = new DetailsDialog(this.getRootControl());
+
+        // create the views based on the url/hash - router settings
+        this.getRouter().initialize();
       },
 
       exit: function () {

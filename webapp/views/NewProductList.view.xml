@@ -10,6 +10,7 @@
         class="sapUiResponsiveMargin"
         width="auto"
         items="{invoice>/Products}"
+        itemPress="onListItemPress"
     >
         <headerToolbar>
             <Toolbar>
@@ -37,7 +38,7 @@
             </Column>
         </columns>
         <items>
-            <ColumnListItem>
+            <ColumnListItem type="Navigation" press="onPress">
                 <cells>
                     <HBox>
                         <items>
