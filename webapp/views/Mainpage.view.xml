@@ -1,5 +1,5 @@
 <mvc:View
-    controllerName="sap.ui.demo.walkthrough.controllers.MainTopSection"
+    controllerName="sap.ui.demo.walkthrough.controllers.App"
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
     id="mainpage"
@@ -16,7 +16,7 @@
                 viewName="sap.ui.demo.walkthrough.views.MainTopSection"
             />
             <mvc:XMLView
-                viewName="sap.ui.demo.walkthrough.views.NewProductList"
+                viewName="sap.ui.demo.walkthrough.views.ProductList"
             />
         </content>
     </Page>

@@ -1,6 +1,10 @@
 sap.ui.define(
-  ["sap/ui/core/mvc/Controller", "sap/ui/core/UIComponent"],
-  function (Controller, UIComponent) {
+  [
+    "sap/ui/core/mvc/Controller",
+    "sap/ui/core/UIComponent",
+    "sap/ui/core/routing/History",
+  ],
+  function (Controller, UIComponent, History) {
     "use strict";
 
     return Controller.extend("sap.ui.demo.walkthrough.controllers.Details", {
@@ -19,6 +23,18 @@ sap.ui.define(
             ),
           model: "invoice",
         });
+      },
+      onNavigationBack: function () {
+        var history = History.getInstance();
+        var previousHash = history.getPreviousHash();
+
+        if (previousHash !== undefined) {
+          window.history.go(-1);
+        } else {
+          // this refering this context
+          var router = UIComponent.getRouterFor(this);
+          router.navTo("mainpage", {}, true);
+        }
       },
     });
   }

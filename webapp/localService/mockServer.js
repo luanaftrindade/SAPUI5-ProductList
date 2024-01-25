@@ -21,10 +21,10 @@ sap.ui.define(
         // simulate the server here
         // add : , path + "/mockdata/productListData.json" - to fetch the json
         var path = "../localService";
-        mockServer.simulate(
-          path + "/metadata.xml",
-          path + "/mockdata/productListData.json"
-        );
+        mockServer.simulate(path + "/metadata.xml", {
+          sMockdataBaseUrl: path + "/mockdata",
+          bGenerateMissingMockData: true,
+        });
 
         // start mock server
         mockServer.start();

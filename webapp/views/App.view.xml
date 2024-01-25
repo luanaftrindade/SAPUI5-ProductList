@@ -1,0 +1,11 @@
+<mvc:View
+    controllerName="sap.ui.demo/walkthrough.controllers.App"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+ 
+>
+    <Shell>
+        <App class="productListMainApp" id="app"/>
+    </Shell>
+</mvc:View>

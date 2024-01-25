@@ -85,7 +85,7 @@
             }
         },
         "rootView": {
-            "viewName": "sap.ui.demo.walkthrough.views.ProductList",
+            "viewName": "sap.ui.demo.walkthrough.views.App",
             "type": "XML",
             "async": true,
             "id": "app"

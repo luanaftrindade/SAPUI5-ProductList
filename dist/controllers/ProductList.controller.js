@@ -1,2 +1,0 @@
-sap.ui.define(["sap/ui/core/mvc/Controller","sap/m/MessageToast","sap/ui/model/json/JSONModel"],function(e,t,o){"use strict";return e.extend("sap.ui.demo.walkthrough.controllers.ProductList",{onShowProductDetails:function(e){var o=e.getParameter("listItem");var r=o.getBindingContext("products").getProperty("ProductName");alert("Price: 20€");t.show("Selected Product: "+r)}})});
-//# sourceMappingURL=ProductList.controller.js.map

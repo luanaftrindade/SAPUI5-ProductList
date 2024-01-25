@@ -4,9 +4,13 @@
     xmlns:mvc="sap.ui.core.mvc"
     id="details"
 >
-    <Page title="{i18n>detailsPageTitle}">
+    <Page title="{i18n>detailsPageTitle}"
+        showNavButton="true"
+        navButtonPress=".onNavigationBack"
+    >
         <ObjectHeader 
         intro="{invoice>ProductID}"
-        title="{invoice>ProductName}" />
+        title="{invoice>ProductName}" 
+    />
     </Page>
 </mvc:View>
