@@ -4,13 +4,63 @@
     xmlns:mvc="sap.ui.core.mvc"
     id="details"
 >
-    <Page title="{i18n>detailsPageTitle}"
+    <Page
+        title="{i18n>detailsPageTitle}"
         showNavButton="true"
         navButtonPress=".onNavigationBack"
     >
-        <ObjectHeader 
-        intro="{invoice>ProductID}"
-        title="{invoice>ProductName}" 
-    />
+        <Panel>
+            <ObjectHeader
+                intro="{invoice>ProductID}"
+                title="{invoice>ProductName}"
+            />
+        </Panel>
+        <Panel>
+            <FlexBox
+                justifyContent="SpaceAround"
+                alignItems="Center"
+            >
+                <HBox>
+                    <VBox class="detailItem">
+                        <Label text="ID" />
+                        <Text text="{invoice>ProductID}" />
+                    </VBox>
+                    <VBox class="detailItem">
+                        <Label text="Name" />
+                        <Text text="{invoice>ProductName}" />
+                    </VBox>
+                    <VBox class="detailItem">
+                        <Label text="Quantity Per Unit" />
+                        <Text text="{invoice>QuantityPerUnit}" />
+                    </VBox>
+                    <VBox class="detailItem">
+                        <Label text="Category" />
+                        <Text text="{invoice>CategoryID}" />
+                    </VBox>
+                    <VBox class="detailItem">
+                        <Label text="Status" />
+                        <Text
+                            text="{= ${invoice>Discontinued} ? 'Discontinued' : 'Active'}"
+                        />
+                        <Button
+                            id="discontinuedButton"
+                            icon="sap-icon://alert"
+                            text="{i18n>descontinued}"
+                            press=".markAsDiscontinued"
+                            class="sapUiSmallMarginEnd"
+                            enabled="{= !${invoice>Discontinued}}"
+                        />
+                    </VBox>
+                    <VBox class="detailItem">
+                        <Label text="Units On Order" />
+                        <Text text="{invoice>UnitsOnOrder}" />
+                    </VBox>
+                    <VBox class="detailItem">
+                        <Label text="Units In Stock" />
+                        <Text text="{invoice>UnitsInStock}" />
+                    </VBox>
+                </HBox>
+            </FlexBox>
+        </Panel>
     </Page>
 </mvc:View>

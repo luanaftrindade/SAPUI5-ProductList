@@ -35,7 +35,7 @@ sap.ui.define(
           } else {
             view.byId("productDetailsDialog").open();
           }
-        },
+        }
       }
     );
   }

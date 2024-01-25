@@ -1,8 +1,8 @@
-html[dir="ltr"] .productListMainApp .showDetailsButton .sapMByn {
+html[dir="ltr"] .productListMainApp .showDetailsButton .sapMByn .discontinuedButton {
   margin-right: 0.125rem;
 }
 
-html[dir="rtl"] .productListMainApp .showDetailsButton .sapMByn {
+html[dir="rtl"] .productListMainApp .showDetailsButton .sapMByn .discontinuedButton {
   margin-left: 0.125rem;
 }
 
@@ -11,3 +11,7 @@ html[dir="rtl"] .productListMainApp .showDetailsButton .sapMByn {
   font-weight: bold;
 }
 
+.productListMainApp .detailItem {
+  padding: 0 3em;
+  align-items: center;
+}

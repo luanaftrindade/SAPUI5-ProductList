@@ -4,20 +4,24 @@
 >
     <Dialog
         id="productDetailsDialog"
-        title="See Price and Discounts"
+        title="Discontinue Product"
     >
         <content>
-            <core:Icon
-                src="sap-icon://hello-world"
-                size="8rem"
-                class="sapUiMediumMargin"
-            />
+                <Text textAlign="Center"
+                    text="Are you sure you want to mark this product as discontinued?"
+                />
         </content>
         <beginButton>
             <Button
-                text="{i18n>dialogCloseDetailsText}"
+                text="{i18n>yesText}"
                 press=".onCloseDialog"
             />
         </beginButton>
+        <endButton>
+            <Button
+                text="{i18n>noText}"
+                press=".onCloseDialog"
+            />
+        </endButton>
     </Dialog>
 </core:FragmentDefinition>

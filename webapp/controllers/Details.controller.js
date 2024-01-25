@@ -36,6 +36,9 @@ sap.ui.define(
           router.navTo("mainpage", {}, true);
         }
       },
+      markAsDiscontinued: function () {
+        this.getOwnerComponent().openDetailsDialog();
+      },
     });
   }
 );
