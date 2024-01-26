@@ -45,7 +45,7 @@
                         <Button
                             id="discontinuedButton"
                             icon="sap-icon://alert"
-                            text="{i18n>descontinued}"
+                            text="{i18n>discontinued}"
                             press=".markAsDiscontinued"
                             class="sapUiSmallMarginEnd"
                             enabled="{= !${invoice>Discontinued}}"

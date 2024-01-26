@@ -15,11 +15,16 @@ sap.ui.define(
         open: function () {
           var view = this._view;
           // create the dialog lazily
-          if (!view.byId("productDetailsDialog")) {
+          if (!view.byId("markAsDiscontinued")) {
             var fragmentController = {
-              onCloseDialog: function () {
-                view.byId("productDetailsDialog").close();
+              onCloseYesDialog: function () {
+                view.byId("markAsDiscontinued").close();
               },
+              onCloseNoDialog: function () { 
+                view.byId("markAsDiscontinued").close();
+                const message = "The product is NOT discontinued";
+                MessageToast.show(message);
+              }
             };
 
             // load asynchronous XML fragment
@@ -35,7 +40,7 @@ sap.ui.define(
           } else {
             view.byId("productDetailsDialog").open();
           }
-        }
+        },
       }
     );
   }

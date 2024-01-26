@@ -3,7 +3,7 @@
     xmlns:core="sap.ui.core"
 >
     <Dialog
-        id="productDetailsDialog"
+        id="markAsDiscontinued"
         title="Discontinue Product"
     >
         <content>
@@ -14,13 +14,13 @@
         <beginButton>
             <Button
                 text="{i18n>yesText}"
-                press=".onCloseDialog"
+                press=".onCloseYesDialog"
             />
         </beginButton>
         <endButton>
             <Button
                 text="{i18n>noText}"
-                press=".onCloseDialog"
+                press=".onCloseNoDialog"
             />
         </endButton>
     </Dialog>

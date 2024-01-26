@@ -1,0 +1,37 @@
+<mvc:View
+controllerName="sap.ui.demo.walkthrough.controllers.OrderDetails"
+xmlns="sap.m"
+xmlns:mvc="sap.ui.core.mvc"
+>
+<Page title="Order Details">
+    <content>
+        <Table id="orderDetailsTable" items="{path: 'invoice>/Order_Details'}">
+            <columns>
+                <Column>
+                    <Text text="ProductID"/>
+                </Column>
+                <Column>
+                    <Text text="Quantity"/>
+                </Column>
+                <Column>
+                    <Text text="UnitPrice"/>
+                </Column>
+                <Column>
+                    <Text text="Discount"/>
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <ObjectIdentifier title="{invoice>ProductID}"/>
+                        <Text text="{invoice>Quantity}"/>
+                        <Text text="{invoice>UnitPrice}"/>
+                        <Text text="{invoice>Discount}"/>
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </content>
+</Page>
+
+</mvc:View>
