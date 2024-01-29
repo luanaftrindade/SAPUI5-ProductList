@@ -6,10 +6,6 @@ sap.ui.define(
       "sap.ui.demo.walkthrough.controllers.MainTopSection",
       {
         onShowProductDetails: function () {
-            // here to debug
-          console.log("VIEW:", this.getView());
-          console.log("MODEL:", this.getView().getModel("i18n"));
-
           var oBundle = this.getView().getModel("i18n").getResourceBundle();
           var sRecipient = this.getView()
             .getModel()
@@ -18,7 +14,7 @@ sap.ui.define(
           MessageToast.show(message);
         },
         onShowMoreDetails: function () {
-            this.getOwnerComponent().openDetailsDialog();
+          this.getOwnerComponent().openDetailsDialog();
         },
       }
     );

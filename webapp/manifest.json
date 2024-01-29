@@ -65,7 +65,9 @@
         "dependencies": {
             "minUI5Version": "1.60",
             "libs": {
-                "sap.m": {}
+                "sap.m": {},
+                "sap.ui.core": {},
+                "sap.ui.layout": {}
             }
         },
         "models": {
@@ -80,12 +82,13 @@
                 },
                 "uri": "<uriRelativeToManifest>"
             },
-            "invoice": {
-                "dataSource": "invoiceRemote"
+            "products": {
+                "type": "sap.ui.model.json.JSONModel",
+                "uri": "./localService/mockdata/Products.json"
             },
-            "supplier": {
-                "type": "sap.ui.model.JSONModel",
-                "uri": "mockdata/Suppliers.json"
+            "suppliers": {
+                "type": "sap.ui.model.json.JSONModel",
+                "uri": "./localService/mockdata/Suppliers.json"
             }
         },
         "rootView": {
@@ -112,7 +115,7 @@
                     "target": "mainpage"
                 },
                 {
-                    "pattern": "details/{invoicePath}",
+                    "pattern": "details/{productsPath}",
                     "name": "details",
                     "target": "details"
                 }

@@ -5,7 +5,7 @@ xmlns:mvc="sap.ui.core.mvc"
 >
 <Page title="Order Details">
     <content>
-        <Table id="orderDetailsTable" items="{path: 'invoice>/Order_Details'}">
+        <Table id="orderDetailsTable" items="{path: 'products>/Order_Details'}">
             <columns>
                 <Column>
                     <Text text="ProductID"/>
@@ -23,10 +23,10 @@ xmlns:mvc="sap.ui.core.mvc"
             <items>
                 <ColumnListItem>
                     <cells>
-                        <ObjectIdentifier title="{invoice>ProductID}"/>
-                        <Text text="{invoice>Quantity}"/>
-                        <Text text="{invoice>UnitPrice}"/>
-                        <Text text="{invoice>Discount}"/>
+                        <ObjectIdentifier title="{products>ProductID}"/>
+                        <Text text="{products>Quantity}"/>
+                        <Text text="{products>UnitPrice}"/>
+                        <Text text="{products>Discount}"/>
                     </cells>
                 </ColumnListItem>
             </items>

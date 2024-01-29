@@ -2,10 +2,9 @@ sap.ui.define(
   [
     "sap/ui/core/UIComponent",
     "sap/ui/model/json/JSONModel",
-    "sap/ui/model/resource/ResourceModel",
     "./controllers/DetailsDialog",
   ],
-  function (UIComponent, JSONModel, ResourceModel, DetailsDialog) {
+  function (UIComponent, JSONModel, DetailsDialog) {
     "use strict";
     return UIComponent.extend("sap.ui.demo.walkthrough.Component", {
       metadata: {
@@ -14,14 +13,22 @@ sap.ui.define(
       init: function () {
         // call the init function of the parent
         UIComponent.prototype.init.apply(this, arguments);
-        
+
         var data = {
           recipient: {
-            name: "UI5",
+            name: "",
           },
         };
+
         var model = new JSONModel(data);
         this.setModel(model);
+
+        // to deploy
+        var productsJson = this.getModel("products");
+        console.log(productsJson);
+
+        var suppliersJson = this.getModel("suppliers");
+        console.log(suppliersJson);
 
         // set dialog - _ is a convention for private methods
         this._detailsDialog = new DetailsDialog(this.getRootControl());

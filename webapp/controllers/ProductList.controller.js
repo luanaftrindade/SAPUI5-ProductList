@@ -33,10 +33,12 @@ sap.ui.define(
         onPress: function (event) {
           var item = event.getSource();
           var router = sap.ui.core.UIComponent.getRouterFor(this);
+
+
           router.navTo("details", {
-            invoicePath: window.encodeURIComponent(
-              item.getBindingContext("invoice").getPath().substr(1)
-            ),
+            productsPath: window.encodeURIComponent(
+              item.getBindingContext("products").getPath().substr(1)
+            )
           });
         },
       }

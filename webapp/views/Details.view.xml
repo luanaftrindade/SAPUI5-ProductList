@@ -11,8 +11,8 @@
     >
         <Panel>
             <ObjectHeader
-                intro="{invoice>ProductID}"
-                title="{invoice>ProductName}"
+                intro="{products>ProductID}"
+                title="{products>ProductName}"
             />
         </Panel>
         <Panel>
@@ -23,24 +23,24 @@
                 <HBox>
                     <VBox class="detailItem">
                         <Label text="ID" />
-                        <Text text="{invoice>ProductID}" />
+                        <Text text="{products>ProductID}" />
                     </VBox>
                     <VBox class="detailItem">
                         <Label text="Name" />
-                        <Text text="{invoice>ProductName}" />
+                        <Text text="{products>ProductName}" />
                     </VBox>
                     <VBox class="detailItem">
                         <Label text="Quantity Per Unit" />
-                        <Text text="{invoice>QuantityPerUnit}" />
+                        <Text text="{products>QuantityPerUnit}" />
                     </VBox>
                     <VBox class="detailItem">
                         <Label text="Category" />
-                        <Text text="{invoice>CategoryID}" />
+                        <Text text="{products>CategoryID}" />
                     </VBox>
                     <VBox class="detailItem">
                         <Label text="Status" />
                         <Text
-                            text="{= ${invoice>Discontinued} ? 'Discontinued' : 'Active'}"
+                            text="{= ${products>Discontinued} ? 'Discontinued' : 'Active'}"
                         />
                         <Button
                             id="discontinuedButton"
@@ -48,19 +48,22 @@
                             text="{i18n>discontinued}"
                             press=".markAsDiscontinued"
                             class="sapUiSmallMarginEnd"
-                            enabled="{= !${invoice>Discontinued}}"
+                            enabled="{= !${products>Discontinued}}"
                         />
                     </VBox>
                     <VBox class="detailItem">
                         <Label text="Units On Order" />
-                        <Text text="{invoice>UnitsOnOrder}" />
+                        <Text text="{products>UnitsOnOrder}" />
                     </VBox>
                     <VBox class="detailItem">
                         <Label text="Units In Stock" />
-                        <Text text="{invoice>UnitsInStock}" />
+                        <Text text="{products>UnitsInStock}" />
                     </VBox>
                 </HBox>
             </FlexBox>
         </Panel>
+        <content>
+            <Panel id="supplierDetailsPage" />
+        </content>
     </Page>
 </mvc:View>

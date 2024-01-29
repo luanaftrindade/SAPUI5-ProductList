@@ -20,11 +20,9 @@ sap.ui.define(
               onCloseYesDialog: function () {
                 view.byId("markAsDiscontinued").close();
               },
-              onCloseNoDialog: function () { 
+              onCloseNoDialog: function () {
                 view.byId("markAsDiscontinued").close();
-                const message = "The product is NOT discontinued";
-                MessageToast.show(message);
-              }
+              },
             };
 
             // load asynchronous XML fragment
