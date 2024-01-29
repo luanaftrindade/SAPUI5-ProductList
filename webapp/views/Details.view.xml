@@ -9,20 +9,24 @@
         showNavButton="true"
         navButtonPress=".onNavigationBack"
     >
-        <Panel>
-            <ObjectHeader
-                intro="{products>ProductID}"
-                title="{products>ProductName}"
-            />
+        <FlexBox
+            alignItems="Center"
+            justifyContent="SpaceBetween"
+        >
+            <Panel>
+                <ObjectHeader
+                    intro="{products>ProductID}"
+                    title="{products>ProductName}"
+                />
+            </Panel>
             <Button
-                            id="discontinuedButton"
-                            icon="sap-icon://alert"
-                            text="{i18n>discontinued}"
-                            press=".markAsDiscontinued"
-                            class="sapUiSmallMarginLeft"
-                            enabled="{= !${products>Discontinued}}"
-                        />
-        </Panel>
+                id="discontinuedButton"
+                icon="sap-icon://alert"
+                text="{i18n>discontinued}"
+                press=".markAsDiscontinued"
+                enabled="{= !${products>Discontinued}}"
+            />
+        </FlexBox>
         <Panel>
             <FlexBox
                 justifyContent="SpaceAround"
@@ -50,7 +54,6 @@
                         <Text
                             text="{= ${products>Discontinued} ? 'Discontinued' : 'Active'}"
                         />
-                        
                     </VBox>
                     <VBox class="detailItem">
                         <Label text="Units On Order" />
