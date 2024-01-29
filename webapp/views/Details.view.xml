@@ -14,6 +14,14 @@
                 intro="{products>ProductID}"
                 title="{products>ProductName}"
             />
+            <Button
+                            id="discontinuedButton"
+                            icon="sap-icon://alert"
+                            text="{i18n>discontinued}"
+                            press=".markAsDiscontinued"
+                            class="sapUiSmallMarginLeft"
+                            enabled="{= !${products>Discontinued}}"
+                        />
         </Panel>
         <Panel>
             <FlexBox
@@ -42,14 +50,7 @@
                         <Text
                             text="{= ${products>Discontinued} ? 'Discontinued' : 'Active'}"
                         />
-                        <Button
-                            id="discontinuedButton"
-                            icon="sap-icon://alert"
-                            text="{i18n>discontinued}"
-                            press=".markAsDiscontinued"
-                            class="sapUiSmallMarginEnd"
-                            enabled="{= !${products>Discontinued}}"
-                        />
+                        
                     </VBox>
                     <VBox class="detailItem">
                         <Label text="Units On Order" />
@@ -62,8 +63,41 @@
                 </HBox>
             </FlexBox>
         </Panel>
+        <Panel id="supplierDetailsPage" />
         <content>
-            <Panel id="supplierDetailsPage" />
+            <Table
+                id="orderDetailsTable"
+                mode="SingleSelectMaster"
+                items="{
+        path: '/orderDetails',
+        templateShareable: false
+    }"
+            >
+                <columns>
+                    <Column>
+                        <Text text="Product ID" />
+                    </Column>
+                    <Column>
+                        <Text text="Quantity" />
+                    </Column>
+                    <Column>
+                        <Text text="Unit Price" />
+                    </Column>
+                    <Column>
+                        <Text text="Discount" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{ProductID}" />
+                            <Text text="{Quantity}" />
+                            <Text text="{UnitPrice}" />
+                            <Text text="{Discount}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
         </content>
     </Page>
 </mvc:View>

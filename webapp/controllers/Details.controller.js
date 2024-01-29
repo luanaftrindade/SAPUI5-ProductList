@@ -16,13 +16,10 @@ sap.ui.define(
           .getRoute("details")
           .attachPatternMatched(this._onObjectMatched, this);
 
-
-        this._fetchOdataOrderDetails(3);
-
-      
         this._formFragments = {};
         this._showFormFragment("Supplier");
       },
+
       _onObjectMatched: function (event) {
         this.getView().bindElement({
           path:
@@ -35,13 +32,32 @@ sap.ui.define(
         var productPath = window.decodeURIComponent(
           event.getParameter("arguments").productsPath
         );
+
+        // Order Details call function fetch data
+        var partsProductPath = productPath.split("/");
+        var productId = (parseInt(partsProductPath[1], 10) + 1).toString();
+        console.log("The selected product id is:", productId);
+
+        setTimeout(() => {
+          this._fetchOdataOrderDetails(productId)
+            .then((orderDetails) => {
+              this._populateOrderDetailsTable(orderDetails);
+            })
+            .catch((error) => {
+              console.error("Error fetching order detais:", error);
+            });
+        }, 1000);
+
+        // To see the properties of the selected Product
         var selectedProduct = this.getView()
           .getModel("products")
           .getProperty("/" + productPath);
         console.log("Selected Product:", selectedProduct);
 
+        // Reaching the supplier ID
         var supplierId = selectedProduct.SupplierID;
-        console.log(supplierId);
+        console.log("The supplier id is: ", supplierId);
+
         // Construct the binding path to the specific supplier
         var sPath = "/Suppliers/" + supplierId;
 
@@ -51,6 +67,7 @@ sap.ui.define(
           model: "suppliers",
         });
       },
+
       onNavigationBack: function () {
         var history = History.getInstance();
         var previousHash = history.getPreviousHash();
@@ -63,6 +80,7 @@ sap.ui.define(
           router.navTo("mainpage", {}, true);
         }
       },
+
       markAsDiscontinued: function () {
         this.getOwnerComponent().openDetailsDialog();
       },
@@ -81,6 +99,7 @@ sap.ui.define(
 
         return formFragment;
       },
+
       _showFormFragment: function (sFragmentName) {
         var supplierPage = this.byId("supplierDetailsPage");
 
@@ -102,34 +121,55 @@ sap.ui.define(
             console.error("Error inserting fragment:", error);
           });
       },
+
       _fetchOdataOrderDetails: function (productId) {
         const url = `https://services.odata.org/Northwind/Northwind.svc/Products(${productId})?$format=json&$expand=Order_Details`;
 
-        // Make HTTP GET request to fetch data
-        fetch(url)
-          .then((response) => {
-            // Check if the response is successful
-            if (!response.ok) {
-              throw new Error("Network response was not ok");
-            }
-            // Parse the JSON response
-            return response.json();
-          })
-          .then((data) => {
-            // Access the properties from the JSON response
-            const product = data;
-            console.log("Product:", product);
+        // Return a new promise
+        return new Promise((resolve, reject) => {
+          // Make HTTP GET request to fetch data
+          fetch(url)
+            .then((response) => {
+              // Check if the response is successful
+              if (!response.ok) {
+                throw new Error("Network response was not ok");
+              }
+              // Parse the JSON response
+              return response.json();
+            })
+            .then((data) => {
+              // Access the properties from the JSON response
+              const product = data;
+              console.log("Product:", product);
 
-            // Accessing order details
-            const orderDetails = product.Order_Details;
-            console.log("Order Details:", orderDetails);
-          })
-          .catch((error) => {
-            console.error(
-              "There was a problem with the fetch operation:",
-              error
-            );
-          });
+              // Accessing order details
+              const orderDetails = product.Order_Details;
+              console.log("Order Details:", orderDetails);
+
+              // Resolve the promise with the order details
+              resolve(orderDetails);
+            })
+            .catch((error) => {
+              console.error(
+                "There was a problem with the fetch operation:",
+                error
+              );
+              // Reject the promise with the error
+              reject(error);
+            });
+        });
+      },
+
+      _populateOrderDetailsTable: function (orderDetails) {
+        var table = this.byId("orderDetailsTable");
+        var oTableModel = table.getModel();
+        if (!oTableModel) {
+          oTableModel = new JSONModel();
+          table.setModel(oTableModel);
+        }
+        oTableModel.setData({
+          orderDetails: orderDetails,
+        });
       },
     });
   }
