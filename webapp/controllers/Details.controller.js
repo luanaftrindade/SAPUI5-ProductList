@@ -16,6 +16,10 @@ sap.ui.define(
           .getRoute("details")
           .attachPatternMatched(this._onObjectMatched, this);
 
+
+        this._fetchOdataOrderDetails(3);
+
+      
         this._formFragments = {};
         this._showFormFragment("Supplier");
       },
@@ -28,7 +32,9 @@ sap.ui.define(
             ),
           model: "products",
         });
-        var productPath = window.decodeURIComponent(event.getParameter("arguments").productsPath);
+        var productPath = window.decodeURIComponent(
+          event.getParameter("arguments").productsPath
+        );
         var selectedProduct = this.getView()
           .getModel("products")
           .getProperty("/" + productPath);
@@ -94,6 +100,35 @@ sap.ui.define(
           })
           .catch(function (error) {
             console.error("Error inserting fragment:", error);
+          });
+      },
+      _fetchOdataOrderDetails: function (productId) {
+        const url = `https://services.odata.org/Northwind/Northwind.svc/Products(${productId})?$format=json&$expand=Order_Details`;
+
+        // Make HTTP GET request to fetch data
+        fetch(url)
+          .then((response) => {
+            // Check if the response is successful
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+            // Parse the JSON response
+            return response.json();
+          })
+          .then((data) => {
+            // Access the properties from the JSON response
+            const product = data;
+            console.log("Product:", product);
+
+            // Accessing order details
+            const orderDetails = product.Order_Details;
+            console.log("Order Details:", orderDetails);
+          })
+          .catch((error) => {
+            console.error(
+              "There was a problem with the fetch operation:",
+              error
+            );
           });
       },
     });
