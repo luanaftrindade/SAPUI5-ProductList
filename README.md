@@ -65,7 +65,9 @@ Open your web browser and navigate to http://localhost:3000 to view the applicat
 
 ## OData Services
 
-The project utilizes OData services to fetch product details, supplier information, order details, and category information. Ensure that the OData service endpoints are correctly configured and accessible.
+The project utilizes OData services to fetch product details, supplier information, order details, and category information.
+<img src="https://logodix.com/logo/1605616.jpg" alt="odata" width="40" height="40" />
+
 
 ## Development Environment
 
@@ -75,6 +77,5 @@ The project is developed using SAPUI5 framework along with JavaScript, HTML, and
 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40" />
 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="html5" width="40" height="40" />
 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40" />
-<img src="https://logodix.com/logo/1605616.jpg" alt="odata" width="40" height="40" />
 
 </p>
