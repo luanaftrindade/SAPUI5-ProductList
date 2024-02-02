@@ -66,8 +66,9 @@ Open your web browser and navigate to http://localhost:3000 to view the applicat
 ## OData Services
 
 The project utilizes OData services to fetch product details, supplier information, order details, and category information.
+<p align= left>
 <img src="https://logodix.com/logo/1605616.jpg" alt="odata" width="40" height="40" />
-
+</p>
 
 ## Development Environment
 
