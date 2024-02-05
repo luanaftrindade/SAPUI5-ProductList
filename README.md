@@ -61,7 +61,7 @@ ui5 serve
 ```
 
 **5. Access the Application:**
-Open your web browser and navigate to http://localhost:3000 to view the application.
+Open your web browser and navigate to the respective localhost url to view the application.
 
 ## OData Services
 
