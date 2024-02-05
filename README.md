@@ -5,8 +5,7 @@ This SAPUI5 project is designed to manage products by fetching data from OData s
 ## Features
 
 - Display a list of products fetched from OData services.
-- View detailed product information including supplier details, order details, and category information.
-- Navigate between product list and product details seamlessly.
+- View detailed product information including supplier details and order details.
 
 ## Project Structure 
 
@@ -14,26 +13,27 @@ The project follows a typical SAPUI5 application structure, including the follow
 
 ### Webapp directory: Contains all the application-specific files.
 
-- **css:** Contains CSS stylesheets for styling the application.
-- **i18n:** Contains internationalization (i18n) files for language localization.
-- **models:** Contains models for data binding and communication with OData services.
-- **views:** Contains XML views defining the UI components and layout.
-- **controllers:** Contains JavaScript files defining controllers for handling logic and interactions in the views.
-- **Component.js:** Initializes the SAPUI5 application and sets up the main components.
-- **manifest.json:** Configuration file defining application metadata, navigation routes, and dependencies.
-- **index.html:** Main HTML file serving as the entry point to the application.
+- _**css:**_ Contains CSS stylesheets for styling the application.
+- _**i18n:**_ Contains internationalization (i18n) files for language localization.
+- _**views:**_ Contains XML views defining the UI components and layout.
+- _**controllers:**_ Contains JavaScript files defining controllers for handling logic and interactions in the views.
+- _**formatter.js:**_ Contains logic to manipulate and format discontinued/available data - not working. 
+- _**component.js:**_ Initializes the SAPUI5 application and sets up the main components.
+- _**index.html:**_ Main HTML file serving as the entry point to the application.
+ - _**manifest.json:**_ Contains central configurations that defines several aspects of the application, including: **Metadata**, **Routing and Navigation**, **Root View**, **Models and Data Sources**, **Dependencies and Libraries** and **Resources Handling**. 
+- _**package.json:**_ Contains dependencies managed by npm.
+- _**ui5.yaml:**_ Contains settings and properties for the UI5 tooling framework. 
+- _**README.md:**_ Documentation file providing project overview, setup instructions, and other relevant information.
+- _**proxy.js:**_ I created this file to set up a server using the CORS Anywhere - to avoid the error that I was having while requesting data from OData Services. The file defines the host and the port to list on, allowing them to be configured using environment variables if provided. The file is not working. 
+
   
 ### Mockserver directory: Contains the mock server implementation for local development and testing.
 
-- **metadata.xml:** Metadata file defining the mock server responses and data structure.
-- **mockdata:** Contains mock data files for simulating OData responses during development.
-- **mockserver.js:** Script file defining the mock server logic and routes.
+- _**metadata.xml:**_ Metadata file defining the mock server responses and data structure.
+- _**mockdata:**_ Contains mock data files for simulating OData responses during development.
+- _**mockserver.js:**_ File defining the mock server logic and routes.
+- _**initMockServer.js**_ **&&** _**mockServer.html:**_ Files to test the mockServer with a different HTML entry point page.   
   
-### Main directory
-
-- **package.json:** Contains project metadata and dependencies managed by npm.
-- **README.md:** Documentation file providing project overview, setup instructions, and other relevant information.
-
 ## Setup Instructions 
 
 To run the project locally, follow these steps:
@@ -80,3 +80,19 @@ The project is developed using SAPUI5 framework along with JavaScript, HTML, and
 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40" />
 
 </p>
+
+## Issues Overview 
+
+- **Product Search**: I added a search functionality to filter products but it's not working as expected.
+- **Discontinue Button**: The button to mark products as discontinued only works on the first click.
+- **Color Display**: Products should be displayed with a green line if available and red if discontinued, but this feature is not working correctly.
+
+## Next Steps 
+
+- Investigate the search functionality to identify and resolve the issue;
+- Debug the button click event handling to ensure consistent behavior;
+- Fix the color display logic to accurately reflect the status of products;
+- Address some styling issues related to the application components, striving to make them as similar to the provided example as possible.
+- Include a Portuguese i18n file to enable automatic translation into Portuguese.
+- Correct proxy.js server file and set up CORS Anywhere properly.
+  
