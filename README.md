@@ -57,7 +57,7 @@ npm install
 **4. Run the Application:**
 Once dependencies are installed, start the development server:
  ```
-npm start
+ui5 serve
 ```
 
 **5. Access the Application:**
