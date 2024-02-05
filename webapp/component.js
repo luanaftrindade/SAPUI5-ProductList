@@ -6,7 +6,7 @@ sap.ui.define(
   ],
   function (UIComponent, JSONModel, DetailsDialog) {
     "use strict";
-    return UIComponent.extend("sap.ui.demo.walkthrough.Component", {
+    return UIComponent.extend("productmanagement.app.Component", {
       metadata: {
         manifest: "json",
       },

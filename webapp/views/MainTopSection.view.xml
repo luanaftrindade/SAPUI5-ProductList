@@ -1,5 +1,5 @@
 <mvc:View
-    controllerName="sap.ui.demo.walkthrough.controllers.MainTopSection"
+    controllerName="productmanagement.app.controllers.MainTopSection"
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
 >
@@ -9,13 +9,7 @@
         width="auto"
     >
         <content>
-            <Button
-                id="showMoreDetailsButton"
-                icon="sap-icon://loan"
-                text="{i18n>openMoreDetailsText}"
-                press=".onShowMoreDetails"
-                class="sapUiSmallMarginEnd"
-            />
+
             <Button
                 text="{i18n>showDetailsButton}"
                 press=".onShowProductDetails"

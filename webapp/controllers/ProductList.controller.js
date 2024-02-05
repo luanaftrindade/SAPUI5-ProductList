@@ -9,7 +9,7 @@ sap.ui.define(
     "use strict";
 
     return Controller.extend(
-      "sap.ui.demo.walkthrough.controllers.ProductList",
+      "productmanagement.app.controllers.ProductList",
 
       {
         /* // NOT WORKING

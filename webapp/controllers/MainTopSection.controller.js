@@ -3,7 +3,7 @@ sap.ui.define(
   function (Controller, MessageToast, Fragment) {
     "use strict";
     return Controller.extend(
-      "sap.ui.demo.walkthrough.controllers.MainTopSection",
+      "productmanagement.app.controllers.MainTopSection",
       {
         onShowProductDetails: function () {
           var oBundle = this.getView().getModel("i18n").getResourceBundle();

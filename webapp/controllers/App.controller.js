@@ -3,7 +3,7 @@ sap.ui.define(
   function (Controller, MessageToast) {
     "use strict";
     return Controller.extend(
-      "sap.ui.demo.walkthrough.controllers.App",
+      "productmanagement.app.controllers.App",
       {
         onOpenDetailsDialog: function () {
           this.getOwnerComponent().openDetailsDialog();

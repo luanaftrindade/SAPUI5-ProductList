@@ -9,7 +9,7 @@ sap.ui.define(
   function (Controller, UIComponent, History, JSONModel, Fragment) {
     "use strict";
 
-    return Controller.extend("sap.ui.demo.walkthrough.controllers.Details", {
+    return Controller.extend("productmanagement.app.controllers.Details", {
       onInit: function (event) {
         var router = sap.ui.core.UIComponent.getRouterFor(this);
         router
@@ -92,7 +92,7 @@ sap.ui.define(
         if (!formFragment) {
           formFragment = Fragment.load({
             id: oView.getId(),
-            name: "sap.ui.demo.walkthrough.views.Supplier",
+            name: "productmanagement.app.views.Supplier",
           });
           this._formFragments[sFragmentName] = formFragment;
         }

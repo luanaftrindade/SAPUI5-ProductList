@@ -1,8 +1,16 @@
-html[dir="ltr"] .productListMainApp .showDetailsButton .sapMByn .discontinuedButton {
+html[dir="ltr"]
+  .productListMainApp
+  .showDetailsButton
+  .sapMByn
+  .discontinuedButton {
   margin-right: 0.125rem;
 }
 
-html[dir="rtl"] .productListMainApp .showDetailsButton .sapMByn .discontinuedButton {
+html[dir="rtl"]
+  .productListMainApp
+  .showDetailsButton
+  .sapMByn
+  .discontinuedButton {
   margin-left: 0.125rem;
 }
 
@@ -16,4 +24,6 @@ html[dir="rtl"] .productListMainApp .showDetailsButton .sapMByn .discontinuedBut
   align-items: center;
 }
 
-
+.productListMainApp .redStatus {
+  color: brown;
+}

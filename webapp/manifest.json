@@ -3,7 +3,7 @@
     "start_url": "<startUrl>",
     "sap.app": {
         "_version": "1.1.0",
-        "id": "sap.ui.demo.walkthrough",
+        "id": "productmanagement.app",
         "type": "application",
         "i18n": "i18n/i18n.properties",
         "applicationVersion": {
@@ -74,7 +74,7 @@
             "i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
                 "settings": {
-                    "bundleName": "sap.ui.demo.walkthrough.i18n.i18n",
+                    "bundleName": "productmanagement.app.i18n.i18n",
                     "supportedLocales": [
                         ""
                     ],
@@ -92,7 +92,7 @@
             }
         },
         "rootView": {
-            "viewName": "sap.ui.demo.walkthrough.views.App",
+            "viewName": "productmanagement.app.views.App",
             "type": "XML",
             "async": true,
             "id": "app"
@@ -103,7 +103,7 @@
             "config": {
                 "routerClass": "sap.m.routing.Router",
                 "viewType": "XML",
-                "viewPath": "sap.ui.demo.walkthrough.views",
+                "viewPath": "productmanagement.app.views",
                 "controlId": "app",
                 "controlAggregation": "pages",
                 "async": true

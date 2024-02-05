@@ -4,7 +4,7 @@ sap.ui.define(
     "use strict";
 
     return ManagedObject.extend(
-      "sap.ui.demo.walkthrough.controllers.DetailsDialog",
+      "productmanagement.app.controllers.DetailsDialog",
       {
         constructor: function (view) {
           this._view = view;
@@ -28,7 +28,7 @@ sap.ui.define(
             // load asynchronous XML fragment
             Fragment.load({
               id: view.getId(),
-              name: "sap.ui.demo.walkthrough.views.ProductDetails",
+              name: "productmanagement.app.views.ProductDetails",
               controller: fragmentController,
             }).then(function (dialog) {
               // connect the dialog to the root view of the component (models and lifecycle)

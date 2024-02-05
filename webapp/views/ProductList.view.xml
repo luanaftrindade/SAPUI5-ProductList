@@ -1,15 +1,16 @@
 <mvc:View
-    controllerName="sap.ui.demo.walkthrough.controllers.ProductList"
+    controllerName="productmanagement.app.controllers.ProductList"
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:core="sap.ui.core"
 >
+
     <Table
         id="productsList"
         headerText="{i18n>productList}"
         class="sapUiResponsiveMargin"
         width="auto"
-        items="{products>/Products}" 
+        items="{products>/Products}"
         selectionChange="saveSupplierId"
     >
         <headerToolbar>
@@ -38,13 +39,16 @@
             </Column>
         </columns>
         <items>
-            <ColumnListItem type="Navigation" press="onPress">
+            <ColumnListItem
+                type="Navigation"
+                press="onPress"
+            >
                 <cells>
                     <HBox>
                         <items>
                             <Text
-                                class="{= ${products>Discontinued} ? 'redStatus' : 'greenStatus' }"
-                                text="{= ${products>Discontinued} ? 'Discontinued' : 'Available' }"
+                                class="{path: 'products>Discontinued', formatter: 'productmanagement.app.util.Formatter.discontinuedStatus'}"
+                                text="{= ${products>Discontinued} ? 'Discontinued' : 'Available'}"
                             />
                         </items>
                     </HBox>

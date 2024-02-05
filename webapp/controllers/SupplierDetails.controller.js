@@ -4,7 +4,7 @@ sap.ui.define(
     "use strict";
 
     return Controller.extend(
-      "sap.ui.demo.walkthrough.controllers.SupplierDetails",
+      "productmanagement.app.controllers.SupplierDetails",
 
       {
         onInit: function (oEvent) {
@@ -19,7 +19,7 @@ sap.ui.define(
           if (!formFragment) {
             formFragment = Fragment.load({
               id: oView.getId(),
-              name: "sap.ui.demo.walkthrough.views.Supplier",
+              name: "productmanagement.app.views.Supplier",
             });
             this._formFragments[sFragmentName] = formFragment;
           }
